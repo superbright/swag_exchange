@@ -1,0 +1,7 @@
+extends layout
+block content
+ form#loginformA(action='swag_submit', method='post')
+  div
+   label(for='email') Email: 
+    input#email(type='text', name='email')
+  input(type='submit', value='Submit')

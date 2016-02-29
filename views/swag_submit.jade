@@ -8,12 +8,23 @@ block content
 				label(for='email') EMAIL
 				input#email(type='email', name='email')
 			div.form-group
-				label(for='email') FIRST
-				input#email(type='text', name='email')
+				label(for='first') FIRST
+				input#first(type='text', name='first')
 			div.form-group
-				label(for='email') LAST
-				input#email(type='text', name='email')
+				label(for='last') LAST
+				input#last(type='text', name='last')
 			div.form-group
-				label(for='email') PASSWORD
-				input#email(type='password', name='email')
+				label(for='password') PASSWORD
+				input#password(type='password', name='password')
+			div.form-group
+				.checkbox
+					input#agree(type='checkbox', name='agree')
+					label(for='agree')
+				label.checkbox-label(for='email') AGREE TO THE TERMS
 			button SUBMIT
+		//- <div class="slideThree">  
+		//-   <input type="checkbox" value="None" id="slideThree" name="check" checked />
+		//-   <label for="slideThree"></label>
+				//- label(for='email') AGREE TO THE TERMS
+		//- </div>
+			

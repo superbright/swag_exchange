@@ -1,3 +1,5 @@
+@include font-face('cubano', '/fonts/Cubano-Regular');
+
 html, body {
 	margin: 0px;
 	padding: 0px;
@@ -9,7 +11,7 @@ html, body {
 
 body {
 	@include display(flex);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'cubano';
   line-height: 1.5;
   letter-spacing: 0.07em;
 }
@@ -28,7 +30,6 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 2rem;
-  font-weight: 300; 
   letter-spacing: 0.07em;
 }
 
@@ -107,21 +108,50 @@ img {
   }
   
 }
+.checkbox-label {
+  display: inline-block;
+  margin-left: 15px;
+}
+.checkbox {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  background: #fcfff4;
+  background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  border: $blue 4px solid;
+  display: inline-block;
+  label {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    cursor: pointer;
+    background: linear-gradient(top, #222 0%, #45484d 100%);
 
-// Animation
-@include keyframes(topBottom) {
-  from {
-    @include transform(translateY(-20px));
-    opacity: 0.5;
+    &:after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      background: $blue;
+      opacity: 0;
+    }
+    &:hover::after {
+      opacity: 0.3;
+    }
   }
-  to {
-    @include transform(translateY(0));
-    opacity: 1;
-  }
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }   
+  } 
 }
 
 .return {
-  font-weight: 700;
   font-size: 5rem;
   text-align: center;
   height: 100vh;
@@ -140,7 +170,6 @@ img {
   width: 100%;
   font-size: 3rem;
   text-transform: uppercase;
-  font-weight: 700;
   li {
     @include flex-grow(1);
     width: 50%;

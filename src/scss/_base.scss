@@ -120,3 +120,35 @@ img {
   @include align-items(center);
   @include justify-content(center);
 }
+
+#swag-types {
+  box-sizing: border-box;
+  border: 25px solid transparent;
+  @include display(flex);
+  @include flex-wrap(wrap);
+  width: 100%;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  li {
+    @include flex-grow(1);
+    width: 50%;
+    box-sizing: border-box;
+    border: 25px solid white;
+    color: white;
+    display: block;
+    @include display(flex);
+      @include align-items(stretch);
+    > div {
+      display: block;
+      background-color: $blue;
+      box-sizing: border-box;
+      border: 25px solid transparent;
+      @include flex-grow(1);
+      @include display(flex);
+      @include align-items(center);
+      @include justify-content(center);
+      width: 100%;
+    }
+  }
+}

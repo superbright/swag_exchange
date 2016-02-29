@@ -28,7 +28,22 @@ router.post('/user_register', function(req, res) {
     var lastname = req.body.lastname;
     var email = req.body.email;
     console.log(name);
-   res.render('return_tablet', { title: 'SWAG' });
+   res.render('return', { title: 'SWAG' });
+});
+
+// return tablepage
+router.get('/swag_types', function(req, res, next) {
+  res.render('swag_types', { title: 'SWAG' });
+});
+
+// return tablepage
+router.get('/swag_final', function(req, res, next) {
+  res.render('swag_final', { title: 'SWAG' });
+});
+
+// return tablepage
+router.get('/animation', function(req, res, next) {
+  res.render('animation', { title: 'SWAG' });
 });
 
 module.exports = router;

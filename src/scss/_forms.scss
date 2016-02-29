@@ -1,0 +1,141 @@
+form {
+	width: 100%;
+}
+
+input,
+label,
+select {
+	display: block;
+	// font-family: $base-font-family;
+	// font-size: $base-font-size;
+}
+
+label {
+	font-weight: 600;
+	margin-bottom: 5px;
+	font-size: 1.8rem;
+	letter-spacing: 0.2rem;
+	&.required::after {
+		content: "*";
+	}
+
+	abbr {
+		display: none;
+	}
+}
+
+.focusing {
+	#{$all-text-inputs},
+	select[multiple=multiple] {
+		border-color: $red;
+		color: $red;
+		@include placeholder {
+			color: lighten($red, 25%);
+		}
+	}
+}
+#{$all-text-inputs},
+select[multiple=multiple] {
+	border: 4px solid $blue;
+
+    border-radius: 0;
+
+	box-sizing: border-box;
+	background-color: transparent;
+	color: $blue;
+	font-size: 3rem;
+	letter-spacing: 0.2rem;
+	// font-family: $base-font-family;
+	// font-size: $base-font-size;
+	// margin-bottom: $small-spacing;
+	padding: 20px;
+	// transition: border-color $base-duration $base-timing;
+	width: 100%;
+	letter-spacing: 0.07em;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	@include placeholder {
+		color: lighten($blue, 25%);
+		letter-spacing: 0.07em;
+		font-family: 'Poppins', sans-serif;
+	}
+	&:hover {
+		// border-color: shade($base-border-color, 20%);
+	}
+
+	&:focus {
+		// border-color: $action-color;
+		// box-shadow: $form-box-shadow-focus;
+		outline: none;
+	}
+
+	&:disabled {
+		// background-color: shade($base-background-color, 5%);
+		cursor: not-allowed;
+
+		&:hover {
+			// border: $base-border;
+		}
+	}
+}
+.form-group {
+	margin-top: 30px;
+}
+
+textarea {
+	resize: vertical;
+}
+
+input[type="search"] {
+	appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline;
+	// margin-right: $small-spacing / 2;
+
+	+ label {
+		display: inline-block;
+	}
+}
+
+input[type="file"] {
+	// margin-bottom: $small-spacing;
+	width: 100%;
+}
+
+select {
+	// margin-bottom: $base-spacing;
+	max-width: 100%;
+	width: auto;
+}
+
+.form-group {	
+	margin-top: 30px;
+	&.error {
+		#{$all-text-inputs} {
+			border: 2px solid $red;
+		}
+	}
+	.validation-error {
+		margin-top: 5px;
+		color: $red;
+	}
+}
+
+button, input[type="submit"] {
+	background-color: $blue;
+	border: none;
+	color: white;
+	width: 100%;
+	padding: 20px;
+	font-size: 3rem;
+	font-weight: 700;
+	letter-spacing: 0.2rem;
+	margin-top: 50px;
+	cursor: pointer;
+}
+
+
+

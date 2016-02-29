@@ -24,9 +24,9 @@ router.post('/swag_submit', function(req, res) {
 
 //user register post call
 router.post('/user_register', function(req, res) {
-    var firstname = req.body.firstname,
-    var lastname = req.body.lastname,
-    var email = req.body.email,;
+    var firstname = req.body.firstname;
+    var lastname = req.body.lastname;
+    var email = req.body.email;
     console.log(name);
    res.render('return_tablet', { title: 'Express' });
 });

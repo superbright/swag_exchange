@@ -1,5 +1,12 @@
 extends layout
 block content
+	#modal
+		div
+			div.x.close-modal X
+			div.content Are you sure?
+				div.select
+					div.yes yes
+					div.close-modal no
 	#ticket-return
 		ul
 			li 
@@ -13,3 +20,4 @@ block content
 		select
 			each item in ['Sunscreen','Poncho','Poncho 2','Bottle Opener','Flash Tats','Take 5 Bar','Gold Foil Cards','Glow-in-the-dark Cards','Bottle Opener','External Battery Pack','Stainless Steel Water Bottle','SS Water Bottle 2','SS Water Bottle 3','Flask','Flask 2','Flask 3','Premium Wine Opener','Men\'s Mini-mergency Kit','Men\'s Mini-mergency Kit 2','Women\'s Mini-mergency Kit','Carry-on Cocktail Kit','Clip-on Lens Kit','Coffee Shop Card','Restaurant Gift Card','iTunes Gift Card','Uber Credit','FitBit Charge','Amazon Fire Tablet','Camelbak','Camelbak 2','Bluetooth Speaker','Polaroid Camera','Polaroid Camera Paper','Polaroid Camera Paper 2','Pocket Photo Printer','Amazon Fire TV','Spa Gift Card','Late Night Food Delivery','Blowout/Makeup','Samsung Tablet','Pocket Projector','Portable Sound System','Beats Headphones','Line Waiter','Restaurant Reservations','Concert Tickets','Year of Take 5 Bars','GoPro Hero']
 				option= item
+		button SUBMIT

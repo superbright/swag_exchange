@@ -140,6 +140,9 @@ button:focus {
 .blurring {
   -webkit-filter: blur(5px); }
 
+#final img {
+  width: 100%; }
+
 .left-right {
   display: -webkit-box;
   display: -moz-box;
@@ -358,11 +361,29 @@ img {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
     #ticket-return ul li {
+      opacity: 0.4;
       box-sizing: border-box;
       border: 25px solid transparent;
-      width: 50%; }
+      width: 50%;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+      #ticket-return ul li.selected {
+        opacity: 1; }
     #ticket-return ul img {
       width: 100%; }
+  #ticket-return select {
+    margin: 50px auto;
+    border: 4px solid #2196F3;
+    border-radius: 0px;
+    font-size: 14px;
+    height: 60px;
+    padding: 20px;
+    /* If you add too much padding here, the options won't show in IE */
+    width: 300px; }
+  #ticket-return button {
+    margin-top: 0px;
+    margin-bottom: 100px; }
 
 @-webkit-keyframes slideUp {
   0% {
@@ -521,7 +542,8 @@ img {
   width: 100%;
   top: 0px;
   display: none;
-  color: white; }
+  color: white;
+  z-index: 1; }
   #modal .x {
     cursor: pointer;
     position: absolute;

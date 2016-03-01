@@ -57,3 +57,16 @@ $('#swag-types li').click(function() {
 	$('#modal .content span').html('\"'+$(this).attr('data-type')+'\"');
 	$('#modal').fadeIn(500);
 });
+
+
+/////////////////////////
+// SWAG TICKET RETURN
+/////////////////////////
+$('#ticket-return li').click(function() {
+	$('#ticket-return li').removeClass('selected');
+	$(this).addClass('selected');
+});
+
+$('button').click(function (){
+	$('#modal').fadeIn(500);
+});

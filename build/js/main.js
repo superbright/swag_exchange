@@ -105,6 +105,18 @@
 		(0, _jquery2.default)('#modal').fadeIn(500);
 	});
 
+	/////////////////////////
+	// SWAG TICKET RETURN
+	/////////////////////////
+	(0, _jquery2.default)('#ticket-return li').click(function () {
+		(0, _jquery2.default)('#ticket-return li').removeClass('selected');
+		(0, _jquery2.default)(this).addClass('selected');
+	});
+
+	(0, _jquery2.default)('button').click(function () {
+		(0, _jquery2.default)('#modal').fadeIn(500);
+	});
+
 /***/ },
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {

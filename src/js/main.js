@@ -1,5 +1,15 @@
 import $ from 'jquery';
 
+/////////////////////////
+// MODAL
+/////////////////////////
+$('.close-modal').click(function () {
+	$('#modal').fadeOut(500);
+});
+
+/////////////////////////
+// ANIMATION
+/////////////////////////
 const contentTypes = [
 	{name:'bottleopener', direction:'UP'},
 	{name:'coffeecups', direction: 'UP'},
@@ -38,3 +48,12 @@ if ($('#animation').length !== 0) {
 		$('.content-type').attr('src','/images/' + contentTypes[currContent].name + '.svg');
 	}, 2000);
 }
+
+
+/////////////////////////
+// SWAG TYPES
+/////////////////////////
+$('#swag-types li').click(function() {
+	$('#modal .content span').html('\"'+$(this).attr('data-type')+'\"');
+	$('#modal').fadeIn(500);
+});

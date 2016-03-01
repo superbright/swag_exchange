@@ -42,8 +42,19 @@ router.get('/swag_final', function(req, res, next) {
 });
 
 // return tablepage
+router.get('/terms', function(req, res, next) {
+  res.render('terms', { title: 'SWAG' });
+});
+
+
+// return tablepage
 router.get('/animation', function(req, res, next) {
   res.render('animation', { title: 'SWAG' });
+});
+
+// return tablepage
+router.get('/swag_ticket_return', function(req, res, next) {
+  res.render('swag_ticket_return', { title: 'SWAG' });
 });
 
 module.exports = router;

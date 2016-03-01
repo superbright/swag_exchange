@@ -1,21 +1,30 @@
 extends layout
 block content
+	#modal
+		div
+			div.x.close-modal X
+			div.content Are you sure about the type 
+				span 
+				| ?
+				div.select
+					div yes
+					div.close-modal no
 	ul#swag-types
-		li 
+		li.accessories(data-type='accessories') 
 			div 
 				div Accessories
-		li 
+		li.apparel(data-type='accessories') 
 			div 
 				div Apparel
-		li 
+		li.electronics(data-type='accessories') 
 			div 
 				div Electronics
-		li 
+		li.homegoods(data-type='Home Goods') 
 			div 
 				div Home Goods
-		li 
+		li.office(data-type='Office Supplies') 
 			div 
 				div Office Supplies
-		li 
+		li.recreation(data-type='recreation') 
 			div 
 				div Recreation

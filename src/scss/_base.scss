@@ -97,6 +97,11 @@ button:focus {
   border: 50px solid transparent;
   width: 100%;
 }
+a {
+  text-decoration: none;
+  color: $blue;
+  border-bottom: 4px solid $blue;
+}
 
 img {
   display: block;
@@ -160,6 +165,9 @@ img {
   @include display(flex);
   @include align-items(center);
   @include justify-content(center);
+  a {
+    border: none
+  }
 }
 
 #swag-types {
@@ -171,6 +179,7 @@ img {
   font-size: 3rem;
   text-transform: uppercase;
   li {
+    cursor: pointer;
     @include flex-grow(1);
     width: 50%;
     box-sizing: border-box;
@@ -188,6 +197,23 @@ img {
       @include display(flex);
       @include align-items(center);
       @include justify-content(center);
+      width: 100%;
+    }
+  }
+}
+
+#ticket-return {
+  box-sizing: border-box;
+  border: 25px solid transparent;
+  ul {
+    @include display(flex);
+    @include flex-wrap(wrap);
+    li {
+    box-sizing: border-box;
+    border: 25px solid transparent;
+      width: 50%;
+    }
+    img {
       width: 100%;
     }
   }
@@ -279,5 +305,41 @@ img {
       left: -10px;
     }
 
+  }
+}
+
+#modal {
+  position: fixed;
+  background-color: $blue;
+  height: 100%;
+  width: 100%;
+  top:0px;
+  display: none;
+  color: white;
+  .x {
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 3rem;
+  }
+  > div {
+    @include flex-grow(1);
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    height: 100%;
+  }
+  .content {
+    text-align: center;
+    font-size: 2rem;
+    .select {
+      @include display(flex);
+      font-size: 4rem;
+      div {
+        cursor: pointer;
+        width: 50%;
+      }
+    }
   }
 }

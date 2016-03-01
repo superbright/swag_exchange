@@ -59,6 +59,16 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	/////////////////////////
+	// MODAL
+	/////////////////////////
+	(0, _jquery2.default)('.close-modal').click(function () {
+		(0, _jquery2.default)('#modal').fadeOut(500);
+	});
+
+	/////////////////////////
+	// ANIMATION
+	/////////////////////////
 	var contentTypes = [{ name: 'bottleopener', direction: 'UP' }, { name: 'coffeecups', direction: 'UP' }, { name: 'cozies', direction: 'DOWN' }, { name: 'cups', direction: 'UP' }, { name: 'purse', direction: 'DOWN' }, { name: 'rallytowel', direction: 'UP' }, { name: 'stickers', direction: 'DOWN' }, { name: 'sunglasses', direction: 'UP' }, { name: 'sweatshirt', direction: 'UP' }, { name: 'tshirt', direction: 'DOWN' }, { name: 'usb', direction: 'UP' }, { name: 'watch', direction: 'DOWN' }, { name: 'waterbottle', direction: 'DOWN' }, { name: 'wineopener', direction: 'UP' }];
 
 	// takes string 'UP' or 'DOWN'
@@ -86,6 +96,14 @@
 			}, 2000);
 		})();
 	}
+
+	/////////////////////////
+	// SWAG TYPES
+	/////////////////////////
+	(0, _jquery2.default)('#swag-types li').click(function () {
+		(0, _jquery2.default)('#modal .content span').html('\"' + (0, _jquery2.default)(this).attr('data-type') + '\"');
+		(0, _jquery2.default)('#modal').fadeIn(500);
+	});
 
 /***/ },
 /* 2 */

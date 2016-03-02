@@ -184,7 +184,8 @@ img {
   display: block; }
 
 #logo img {
-  margin: 0px auto; }
+  margin: 0px auto;
+  width: 200px; }
 
 .checkbox-label {
   display: inline-block;

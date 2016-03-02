@@ -6,19 +6,19 @@ block content
 		form#loginformA(action='swag_submit', method='post')
 			div.form-group
 				label(for='first') FIRST
-				input#first(type='text', name='first')
+				input#first(type='text', name='first', required)
 			div.form-group
 				label(for='last') LAST
-				input#last(type='text', name='last')
+				input#last(type='text', name='last', required)
 			div.form-group
 				label(for='email') EMAIL
-				input#email(type='email', name='email')
+				input#email(type='email', name='email', required)
 			div.form-group
 				label(for='username') USERNAME
-				input#username(type='text', name='username')
+				input#username(type='text', name='username', required)
 			div.form-group
 				.checkbox
-					input#agree(type='checkbox', name='agree')
+					input#agree(type='checkbox', name='agree', required)
 					label(for='agree')
 				label.checkbox-label(for='email') I AGREE TO 
 					a(href='/terms') **ABB TERMS** 

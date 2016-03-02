@@ -60,6 +60,14 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/////////////////////////
+	// SWAG SIGNUP
+	/////////////////////////
+	(0, _jquery2.default)("#loginformA").submit(function (event) {
+		console.log('submitting');
+		console.log((0, _jquery2.default)("#agree").val());
+	});
+
+	/////////////////////////
 	// MODAL
 	/////////////////////////
 	(0, _jquery2.default)('.close-modal').click(function () {

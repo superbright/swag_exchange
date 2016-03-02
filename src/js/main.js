@@ -1,6 +1,15 @@
 import $ from 'jquery';
 
 /////////////////////////
+// SWAG SIGNUP
+/////////////////////////
+$( "#loginformA" ).submit(function( event ) {
+	console.log('submitting');
+  console.log($("#agree").val());
+});
+
+
+/////////////////////////
 // MODAL
 /////////////////////////
 $('.close-modal').click(function () {

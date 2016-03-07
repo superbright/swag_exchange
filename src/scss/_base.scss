@@ -5,7 +5,7 @@ html, body {
 	padding: 0px;
 	height: 100%;
 	min-height: 100%;
-  color: $blue;
+  color: $black;
   letter-spacing: 0.2rem;
 }
 
@@ -101,8 +101,8 @@ button:focus {
 }
 a {
   text-decoration: none;
-  color: $blue;
-  border-bottom: 4px solid $blue;
+  color: $black;
+  border-bottom: 4px solid $black;
 }
 
 img {
@@ -126,7 +126,7 @@ img {
   position: relative;
   background: #fcfff4;
   background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-  border: $blue 4px solid;
+  border: $black 4px solid;
   display: inline-block;
   label {
     width: 20px;
@@ -144,7 +144,7 @@ img {
       position: absolute;
       top: 2px;
       left: 2px;
-      background: $blue;
+      background: $black;
       opacity: 0;
     }
     &:hover::after {
@@ -200,7 +200,7 @@ img {
       @include align-items(stretch);
     > div {
       display: block;
-      background-color: $blue;
+      background-color: $black;
       box-sizing: border-box;
       border: 25px solid transparent;
       @include flex-grow(1);
@@ -234,7 +234,7 @@ img {
   }
   select {
     margin: 50px auto;
-     border: 4px solid $blue;
+     border: 4px solid $black;
      border-radius: 0px;
      font-size: 14px;
      height: 60px;
@@ -338,7 +338,7 @@ img {
 
 #modal {
   position: fixed;
-  background-color: $blue;
+  background-color: $black;
   height: 100%;
   width: 100%;
   top:0px;

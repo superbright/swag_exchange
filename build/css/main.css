@@ -45,7 +45,7 @@ html, body {
   padding: 0px;
   height: 100%;
   min-height: 100%;
-  color: #2196F3;
+  color: #000000;
   letter-spacing: 0.2rem; }
 
 body {
@@ -177,8 +177,8 @@ button:focus {
 
 a {
   text-decoration: none;
-  color: #2196F3;
-  border-bottom: 4px solid #2196F3; }
+  color: #000000;
+  border-bottom: 4px solid #000000; }
 
 img {
   display: block; }
@@ -197,7 +197,7 @@ img {
   position: relative;
   background: #fcfff4;
   background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-  border: #2196F3 4px solid;
+  border: #000000 4px solid;
   display: inline-block; }
   .checkbox label {
     width: 20px;
@@ -214,7 +214,7 @@ img {
       position: absolute;
       top: 2px;
       left: 2px;
-      background: #2196F3;
+      background: #000000;
       opacity: 0; }
     .checkbox label:hover::after {
       opacity: 0.3; }
@@ -312,7 +312,7 @@ img {
     -ms-flex-align: stretch; }
     #swag-types li > div {
       display: block;
-      background-color: #2196F3;
+      background-color: #000000;
       box-sizing: border-box;
       border: 25px solid transparent;
       -webkit-flex-grow: 1;
@@ -378,7 +378,7 @@ img {
       width: 100%; }
   #ticket-return select {
     margin: 50px auto;
-    border: 4px solid #2196F3;
+    border: 4px solid #000000;
     border-radius: 0px;
     font-size: 14px;
     height: 60px;
@@ -541,7 +541,7 @@ img {
 
 #modal {
   position: fixed;
-  background-color: #2196F3;
+  background-color: #000000;
   height: 100%;
   width: 100%;
   top: 0px;
@@ -638,11 +638,11 @@ label {
 
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
 select[multiple=multiple] {
-  border: 4px solid #2196F3;
+  border: 4px solid #000000;
   border-radius: 0;
   box-sizing: border-box;
   background-color: transparent;
-  color: #2196F3;
+  color: #000000;
   font-size: 2.8rem;
   letter-spacing: 0.2rem;
   padding: 18px;
@@ -651,22 +651,22 @@ select[multiple=multiple] {
   font-family: 'cubano'; }
   input[type="color"]::-webkit-input-placeholder, input[type="date"]::-webkit-input-placeholder, input[type="datetime"]::-webkit-input-placeholder, input[type="datetime-local"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="month"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="text"]::-webkit-input-placeholder, input[type="time"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder, input[type="week"]::-webkit-input-placeholder, input:not([type])::-webkit-input-placeholder, textarea::-webkit-input-placeholder,
   select[multiple=multiple]::-webkit-input-placeholder {
-    color: #9acffa;
+    color: #404040;
     letter-spacing: 0.07em;
     font-family: 'cubano'; }
   input[type="color"]::-moz-placeholder, input[type="date"]::-moz-placeholder, input[type="datetime"]::-moz-placeholder, input[type="datetime-local"]::-moz-placeholder, input[type="email"]::-moz-placeholder, input[type="month"]::-moz-placeholder, input[type="number"]::-moz-placeholder, input[type="password"]::-moz-placeholder, input[type="search"]::-moz-placeholder, input[type="tel"]::-moz-placeholder, input[type="text"]::-moz-placeholder, input[type="time"]::-moz-placeholder, input[type="url"]::-moz-placeholder, input[type="week"]::-moz-placeholder, input:not([type])::-moz-placeholder, textarea::-moz-placeholder,
   select[multiple=multiple]::-moz-placeholder {
-    color: #9acffa;
+    color: #404040;
     letter-spacing: 0.07em;
     font-family: 'cubano'; }
   input[type="color"]:-moz-placeholder, input[type="date"]:-moz-placeholder, input[type="datetime"]:-moz-placeholder, input[type="datetime-local"]:-moz-placeholder, input[type="email"]:-moz-placeholder, input[type="month"]:-moz-placeholder, input[type="number"]:-moz-placeholder, input[type="password"]:-moz-placeholder, input[type="search"]:-moz-placeholder, input[type="tel"]:-moz-placeholder, input[type="text"]:-moz-placeholder, input[type="time"]:-moz-placeholder, input[type="url"]:-moz-placeholder, input[type="week"]:-moz-placeholder, input:not([type]):-moz-placeholder, textarea:-moz-placeholder,
   select[multiple=multiple]:-moz-placeholder {
-    color: #9acffa;
+    color: #404040;
     letter-spacing: 0.07em;
     font-family: 'cubano'; }
   input[type="color"]:-ms-input-placeholder, input[type="date"]:-ms-input-placeholder, input[type="datetime"]:-ms-input-placeholder, input[type="datetime-local"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="month"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="search"]:-ms-input-placeholder, input[type="tel"]:-ms-input-placeholder, input[type="text"]:-ms-input-placeholder, input[type="time"]:-ms-input-placeholder, input[type="url"]:-ms-input-placeholder, input[type="week"]:-ms-input-placeholder, input:not([type]):-ms-input-placeholder, textarea:-ms-input-placeholder,
   select[multiple=multiple]:-ms-input-placeholder {
-    color: #9acffa;
+    color: #404040;
     letter-spacing: 0.07em;
     font-family: 'cubano'; }
   input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
@@ -705,7 +705,7 @@ select {
     color: #F44336; }
 
 button, input[type="submit"] {
-  background-color: #2196F3;
+  background-color: #000000;
   border: none;
   color: white;
   width: 100%;

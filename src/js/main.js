@@ -40,10 +40,10 @@ const contentTypes = [
 function setUpOrDown(upOrDown='UP') {
 	if (upOrDown === 'UP') {
 		$('.up').addClass('show');
-		$('.down').removeClass('show');		
+		$('.down').removeClass('show');
 	} else {
 		$('.down').addClass('show');
-		$('.up').removeClass('show');		
+		$('.up').removeClass('show');
 	}
 }
 
@@ -63,19 +63,37 @@ if ($('#animation').length !== 0) {
 // SWAG TYPES
 /////////////////////////
 $('#swag-types li').click(function() {
-	$('#modal .content span').html('\"'+$(this).attr('data-type')+'\"');
+	var cat = $(this).attr('data-type');
+	$('#modal .content span').html(`"${cat}"`);
 	$('#modal').fadeIn(500);
+	$('form input').val(cat);
+});
+
+$('#swag-types-submit').click(function() {
+	$('form').submit();
 });
 
 
 /////////////////////////
 // SWAG TICKET RETURN
 /////////////////////////
+$(function() {
+	$('select').hide();
+});
+
 $('#ticket-return li').click(function() {
 	$('#ticket-return li').removeClass('selected');
 	$(this).addClass('selected');
+	$('select').hide();
+	var clsname = Array.prototype.filter.call(this.classList, function(c) { return c.indexOf('tier') == 0; })[0];
+	$('select.' + clsname).show();
 });
 
 $('button').click(function (){
 	$('#modal').fadeIn(500);
+});
+
+$('#swag-ticket-submit').click(function() {
+	$('input').val($('select:visible option:selected').text());
+	$('form').submit();
 });

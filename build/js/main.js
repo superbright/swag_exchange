@@ -109,20 +109,40 @@
 	// SWAG TYPES
 	/////////////////////////
 	(0, _jquery2.default)('#swag-types li').click(function () {
-		(0, _jquery2.default)('#modal .content span').html('\"' + (0, _jquery2.default)(this).attr('data-type') + '\"');
+		var cat = (0, _jquery2.default)(this).attr('data-type');
+		(0, _jquery2.default)('#modal .content span').html('"' + cat + '"');
 		(0, _jquery2.default)('#modal').fadeIn(500);
+		(0, _jquery2.default)('form input').val(cat);
+	});
+
+	(0, _jquery2.default)('#swag-types-submit').click(function () {
+		(0, _jquery2.default)('form').submit();
 	});
 
 	/////////////////////////
 	// SWAG TICKET RETURN
 	/////////////////////////
+	(0, _jquery2.default)(function () {
+		(0, _jquery2.default)('select').hide();
+	});
+
 	(0, _jquery2.default)('#ticket-return li').click(function () {
 		(0, _jquery2.default)('#ticket-return li').removeClass('selected');
 		(0, _jquery2.default)(this).addClass('selected');
+		(0, _jquery2.default)('select').hide();
+		var clsname = Array.prototype.filter.call(this.classList, function (c) {
+			return c.indexOf('tier') == 0;
+		})[0];
+		(0, _jquery2.default)('select.' + clsname).show();
 	});
 
 	(0, _jquery2.default)('button').click(function () {
 		(0, _jquery2.default)('#modal').fadeIn(500);
+	});
+
+	(0, _jquery2.default)('#swag-ticket-submit').click(function () {
+		(0, _jquery2.default)('input').val((0, _jquery2.default)('select:visible option:selected').text());
+		(0, _jquery2.default)('form').submit();
 	});
 
 /***/ },

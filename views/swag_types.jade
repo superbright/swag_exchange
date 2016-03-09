@@ -3,28 +3,30 @@ block content
 	#modal
 		div
 			div.x.close-modal X
-			div.content Are you sure about the type 
-				span 
+			div.content Are you sure about the type
+				span
 				| ?
 				div.select
-					div.yes yes
+					div#swag-types-submit yes
 					div.close-modal no
 	ul#swag-types
-		li.accessories(data-type='accessories') 
-			div 
+		li.accessories(data-type='accessories')
+			div
 				div Accessories
-		li.apparel(data-type='accessories') 
-			div 
+		li.apparel(data-type='apparel')
+			div
 				div Apparel
-		li.electronics(data-type='accessories') 
-			div 
+		li.electronics(data-type='electronics')
+			div
 				div Electronics
-		li.homegoods(data-type='Home Goods') 
-			div 
+		li.homegoods(data-type='home goods')
+			div
 				div Home Goods
-		li.office(data-type='Office Supplies') 
-			div 
+		li.office(data-type='office supplies')
+			div
 				div Office Supplies
-		li.recreation(data-type='recreation') 
-			div 
+		li.recreation(data-type='recreation')
+			div
 				div Recreation
+	form(action='/swag_types_submit',method='post')
+		input(name='category',type='hidden')

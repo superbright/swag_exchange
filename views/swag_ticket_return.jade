@@ -5,19 +5,30 @@ block content
 			div.x.close-modal X
 			div.content Are you sure?
 				div.select
-					div.yes yes
+					div#swag-ticket-submit yes
 					div.close-modal no
 	#ticket-return
 		ul
-			li 
+			li.tier-1
 				img(src='/images/category1.svg')
-			li 
+			li.tier-2
 				img(src='/images/category2.svg')
-			li 
+			li.tier-3
 				img(src='/images/category3.svg')
-			li 
+			li.tier-4
 				img(src='/images/category4.svg')
-		select
-			each item in ['Sunscreen','Poncho','Poncho 2','Bottle Opener','Flash Tats','Take 5 Bar','Gold Foil Cards','Glow-in-the-dark Cards','Bottle Opener','External Battery Pack','Stainless Steel Water Bottle','SS Water Bottle 2','SS Water Bottle 3','Flask','Flask 2','Flask 3','Premium Wine Opener','Men\'s Mini-mergency Kit','Men\'s Mini-mergency Kit 2','Women\'s Mini-mergency Kit','Carry-on Cocktail Kit','Clip-on Lens Kit','Coffee Shop Card','Restaurant Gift Card','iTunes Gift Card','Uber Credit','FitBit Charge','Amazon Fire Tablet','Camelbak','Camelbak 2','Bluetooth Speaker','Polaroid Camera','Polaroid Camera Paper','Polaroid Camera Paper 2','Pocket Photo Printer','Amazon Fire TV','Spa Gift Card','Late Night Food Delivery','Blowout/Makeup','Samsung Tablet','Pocket Projector','Portable Sound System','Beats Headphones','Line Waiter','Restaurant Reservations','Concert Tickets','Year of Take 5 Bars','GoPro Hero']
+		select.tier-1
+			each item in tier1
+				option= item
+		select.tier-2
+			each item in tier2
+				option= item
+		select.tier-3
+			each item in tier3
+				option= item
+		select.tier-4
+			each item in tier4
 				option= item
 		button SUBMIT
+		form(action='/swag_ticket_submit',method='post')
+			input(name='item',type='hidden')

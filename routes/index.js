@@ -5,8 +5,22 @@ var router = express.Router();
 
 var numTiers = 4;
 
+router.get('/view/cats', function (req, res, next) {
+  var categories = req.db.get('categories');
+  categories.find({}, { sort: { count: -1 } }, function(err, docs) {
+    res.json(docs);
+  });
+});
+
+router.get('/view/inv', function (req, res, next) {
+  var inventory = req.db.get('inventory');
+  inventory.find({}, {}, function(err, docs) {
+    res.json(docs);
+  });
+});
+
+
 router.post('/swag_types_submit', function(req, res) {
-  console.log(req.body);
     var catName = req.body.category;
     var categories = req.db.get('categories');
     categories.find({}, { sort: { count: -1 } }, function(err, docs) {

@@ -52,7 +52,7 @@ gulp.task('js', function() {
 						presets: ['es2015', 'stage-0', 'react'],
 					}
 				}]
-			}      
+			}
 		}))
 		.pipe(gulp.dest('build/js'));
 });

@@ -19,6 +19,7 @@ router.get('/view/inv', function (req, res, next) {
   });
 });
 
+var bias_chance = 0.75; // 75% chance of bias
 
 router.post('/swag_types_submit', function(req, res) {
     var catNames = req.body.categories.split(',');
@@ -27,10 +28,14 @@ router.post('/swag_types_submit', function(req, res) {
     categories.find({}, { sort: { count: -1 } }, function(err, docs) {
       // get position in the list - lowest position = more items = shitty
       var catValues = _.map(catNames, function (n) { return _.findIndex(docs, { name: n }); });
-      // get the highest position/rarest category
-      var highest = _.max(catValues);
+      // get the highest position/rarest category and normalize to [0,1] range
+      var normalized = _.max(catValues) / docs.length;
       // calculate tier
-      var tier = 1 + Math.round((highest / docs.length) * numTiers);
+      var tier = 1 + Math.round(normalized * numTiers);
+      if (_.random(true) < bias_chance && tier > 1) {
+        tier--;
+        console.log('tier downgraded to ' + tier);
+      }
 
       categories.update({ name: { $in: catNames } }, { $inc: { count: 1 }}, function (err) {
         res.render('swag_final', { tier: tier });

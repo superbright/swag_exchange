@@ -6,9 +6,18 @@ const livereload = require('gulp-livereload');
 const webpack = require('webpack-stream');
 const named = require('vinyl-named');
 const path = require('path');
+const mongodbData = require('gulp-mongodb-data');
 
 const static = './src/';
 const build = '/build';
+
+gulp.task('initdb', function() {
+  gulp.src('./db/*.json')
+    .pipe(mongodbData({
+      mongoUrl: 'mongodb://localhost/swag',
+      dropCollection: true
+    }));
+});
 
 gulp.task('watch', function () {
 	gulp.watch('src/scss/**/*.scss', ['style']);

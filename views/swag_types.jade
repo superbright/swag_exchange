@@ -3,7 +3,7 @@ block content
 	#modal
 		div
 			div.x.close-modal X
-			div.content Are you sure about the type
+			div.content Are you sure about the type 
 				span
 				| ?
 				div.select
@@ -28,5 +28,6 @@ block content
 		li.recreation(data-type='recreation')
 			div
 				div Recreation
+		button SUBMIT
 	form(action='/swag_types_submit',method='post')
-		input(name='category',type='hidden')
+		input(name='categories',type='hidden')

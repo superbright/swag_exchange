@@ -13,6 +13,8 @@ var users = require('./routes/users');
 var app = express();
 
 var db = monk('localhost:27017/swag');
+// enable multiple update (for categories)
+db.options.multi = true;
 // Make our db accessible to our router
 app.use(function(req,res,next){
     req.db = db;

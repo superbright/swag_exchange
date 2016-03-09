@@ -109,9 +109,11 @@
 	// SWAG TYPES
 	/////////////////////////
 	(0, _jquery2.default)('#swag-types li').click(function () {
-		var cat = (0, _jquery2.default)(this).attr('data-type');
+		(0, _jquery2.default)(this).toggleClass('selected');
+		var cat = (0, _jquery2.default)('#swag-types li.selected').map(function () {
+			return (0, _jquery2.default)(this).attr('data-type');
+		}).get();
 		(0, _jquery2.default)('#modal .content span').html('"' + cat + '"');
-		(0, _jquery2.default)('#modal').fadeIn(500);
 		(0, _jquery2.default)('form input').val(cat);
 	});
 

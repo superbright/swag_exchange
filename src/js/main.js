@@ -63,9 +63,11 @@ if ($('#animation').length !== 0) {
 // SWAG TYPES
 /////////////////////////
 $('#swag-types li').click(function() {
-	var cat = $(this).attr('data-type');
+	$(this).toggleClass('selected');
+	var cat = $('#swag-types li.selected').map(function() {
+		return $(this).attr('data-type');
+	}).get();
 	$('#modal .content span').html(`"${cat}"`);
-	$('#modal').fadeIn(500);
 	$('form input').val(cat);
 });
 

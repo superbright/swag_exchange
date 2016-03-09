@@ -21,12 +21,14 @@ router.get('/view/inv', function (req, res, next) {
 
 
 router.post('/swag_types_submit', function(req, res) {
-    var catName = req.body.category;
+    var catNames = req.body.categories.split(',');
     var categories = req.db.get('categories');
     categories.find({}, { sort: { count: -1 } }, function(err, docs) {
-      var tier = 1 + Math.round((_.findIndex(docs, { name: catName }) / docs.length) * numTiers);
+      var catValues = _.map(catNames, function (n) { return _.findIndex(docs, { name: n }); });
+      var lowest = _.min(catValues);
+      var tier = 1 + Math.round((lowest / docs.length) * numTiers);
 
-      categories.update({ name: catName }, { $inc: { count: 1 }}, function (err) {
+      categories.update({ name: { $in: catNames } }, { $inc: { count: 1 }}, function (err) {
         res.render('swag_final', { tier: tier });
       });
     });

@@ -294,6 +294,10 @@ img {
     border: 25px solid white;
     color: white;
     display: block;
+    opacity: 0.5;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -310,6 +314,8 @@ img {
     -o-align-items: stretch;
     align-items: stretch;
     -ms-flex-align: stretch; }
+    #swag-types li.selected {
+      opacity: 1; }
     #swag-types li > div {
       display: block;
       background-color: #000000;

@@ -15,7 +15,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.07em;
 }
-html { font-size: 62.5%; } 
+html { font-size: 62.5%; }
 body { font-size: 1.4rem; } /* =14px */
 
 h1 { font-size: 4.0rem; line-height: 1.2;}
@@ -91,7 +91,7 @@ button:focus {
     &:last-child {
       text-align: right;
     }
-  }  
+  }
 }
 
 .container {
@@ -111,10 +111,10 @@ img {
 
 #logo {
   img {
-    margin: 0px auto;  
+    margin: 0px auto;
     width: 200px;
   }
-  
+
 }
 .checkbox-label {
   display: inline-block;
@@ -155,8 +155,8 @@ img {
     visibility: hidden;
     &:checked + label:after {
       opacity: 1;
-    }   
-  } 
+    }
+  }
 }
 
 .return {
@@ -316,7 +316,7 @@ img {
         @include animation-name(slideUp, slide);
       }
       &.down {
-        @include animation-name(slideDown, slide);  
+        @include animation-name(slideDown, slide);
         img {
           @include transform(rotate(180deg));
         }

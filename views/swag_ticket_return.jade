@@ -19,16 +19,16 @@ block content
 				img(src='/images/category4.svg')
 		select.tier-1
 			each item in tier1
-				option= item
+				option(value=item.name) #{item.name} (#{item.qty})
 		select.tier-2
 			each item in tier2
-				option= item
+				option(value=item.name) #{item.name} (#{item.qty})
 		select.tier-3
 			each item in tier3
-				option= item
+				option(value=item.name) #{item.name} (#{item.qty})
 		select.tier-4
 			each item in tier4
-				option= item
+				option(value=item.name) #{item.name} (#{item.qty})
 		button SUBMIT
 		form(action='/swag_ticket_submit',method='post')
 			input(name='item',type='hidden')

@@ -54,10 +54,7 @@ router.get('/animation', function(req, res, next) {
 router.get('/swag_ticket_return', function(req, res, next) {
   var inventory = req.db.get('inventory');
   inventory.find({ qty: { $gt: 0 }}, {}, function(err, docs) {
-    var byTier = _(docs)
-      .groupBy('tier')
-      .mapValues(function(t) { return _.map(t, _.property('name')); })
-      .value();
+    var byTier = _.groupBy(docs, 'tier');
     res.render('swag_ticket_return', {
       title: 'SWAG',
       tier1: byTier[1],

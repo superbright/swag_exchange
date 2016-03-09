@@ -96,6 +96,6 @@ $('button').click(function (){
 });
 
 $('#swag-ticket-submit').click(function() {
-	$('input').val($('select:visible option:selected').text());
+	$('input').val($('select:visible').val());
 	$('form').submit();
 });

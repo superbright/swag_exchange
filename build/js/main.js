@@ -143,7 +143,7 @@
 	});
 
 	(0, _jquery2.default)('#swag-ticket-submit').click(function () {
-		(0, _jquery2.default)('input').val((0, _jquery2.default)('select:visible option:selected').text());
+		(0, _jquery2.default)('input').val((0, _jquery2.default)('select:visible').val());
 		(0, _jquery2.default)('form').submit();
 	});
 

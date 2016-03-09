@@ -23,10 +23,14 @@ router.get('/view/inv', function (req, res, next) {
 router.post('/swag_types_submit', function(req, res) {
     var catNames = req.body.categories.split(',');
     var categories = req.db.get('categories');
+    // sort highest item count to lowest
     categories.find({}, { sort: { count: -1 } }, function(err, docs) {
+      // get position in the list - lowest position = more items = shitty
       var catValues = _.map(catNames, function (n) { return _.findIndex(docs, { name: n }); });
-      var lowest = _.min(catValues);
-      var tier = 1 + Math.round((lowest / docs.length) * numTiers);
+      // get the highest position/rarest category
+      var highest = _.max(catValues);
+      // calculate tier
+      var tier = 1 + Math.round((highest / docs.length) * numTiers);
 
       categories.update({ name: { $in: catNames } }, { $inc: { count: 1 }}, function (err) {
         res.render('swag_final', { tier: tier });

@@ -58,7 +58,6 @@ router.get('/swag_ticket_return', function(req, res, next) {
       .groupBy('tier')
       .mapValues(function(t) { return _.map(t, _.property('name')); })
       .value();
-    console.log(byTier[4]);
     res.render('swag_ticket_return', {
       title: 'SWAG',
       tier1: byTier[1],

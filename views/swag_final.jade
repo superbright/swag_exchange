@@ -2,5 +2,8 @@ extends layout
 block content
 	.return
 		#final
-			img(src="images/category#{tier}.svg")
+			if tier >= 1 && tier <= 4
+				img(src="images/category#{tier}.svg")
+			else
+				p ALL GONE :(
 			a(href='/swag_types') BACK

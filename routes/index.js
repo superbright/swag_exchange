@@ -38,9 +38,35 @@ router.post('/swag_types_submit', function(req, res) {
       }
 
       categories.update({ name: { $in: catNames } }, { $inc: { count: 1 }}, function (err) {
-        res.render('swag_final', { tier: tier });
+        // make sure our we have items available in that tier
+        var inventory = req.db.get('inventory');
+        inventory.col.aggregate(
+          [{ $match: { "qty" : { $gt: 0 } } }
+          ,{ $group: { "_id": "$tier", "count": { $sum: 1 } } }]
+          ,function (err, results) {
+
+          var tierInv = _(results)
+            .map(function (o) { return [o._id, o.count]; })
+            .fromPairs()
+            .value();
+
+          var origTier = tier;
+          while (tier > 0 && !_.has(tierInv, tier)) {
+            console.log('tier ' + tier + ' empty')
+            --tier;
+          }
+          if (tier == 0) {
+            tier = origTier;
+            while (tier <= 4 && !_.has(tierInv, tier)) {
+              console.log('tier ' + tier + ' empty')
+              ++tier;
+            }
+          }
+
+          res.render('swag_final', { tier: tier });
       });
     });
+  });
 });
 
 router.get('/swag_types', function(req, res, next) {

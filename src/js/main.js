@@ -47,14 +47,24 @@ function setUpOrDown(upOrDown='UP') {
 	}
 }
 
+$.fn.random = function() {
+  return this.eq(Math.floor(Math.random() * this.length));
+}
+
 if ($('#animation').length !== 0) {
 	const typeAmount = contentTypes.length;
 	let currContent = 0;
 
 	window.setInterval(() => {
-		currContent = currContent === typeAmount - 1 ? 0 : currContent + 1;
-		setUpOrDown(contentTypes[currContent].direction);
-		$('.content-type').attr('src','/images/' + contentTypes[currContent].name + '.svg');
+		if (currContent === typeAmount - 1) {
+			$('.fullscreen').random().show();
+			currContent = 0;
+		} else {
+			$('.fullscreen').hide();
+			currContent = currContent + 1;
+			setUpOrDown(contentTypes[currContent].direction);
+			$('.content-type').attr('src','/images/' + contentTypes[currContent].name + '.svg');
+		}
 	}, 2000);
 }
 

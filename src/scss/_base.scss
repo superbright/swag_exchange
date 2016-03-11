@@ -377,3 +377,14 @@ img {
     }
   }
 }
+
+.fullscreen {
+	position: fixed;
+  height: 100%;
+  width: 100%;
+	background: $black;
+  top:0px;
+  display: none;
+	margin: 0;
+  z-index: 1;
+}

@@ -92,15 +92,25 @@
 		}
 	}
 
+	_jquery2.default.fn.random = function () {
+		return this.eq(Math.floor(Math.random() * this.length));
+	};
+
 	if ((0, _jquery2.default)('#animation').length !== 0) {
 		(function () {
 			var typeAmount = contentTypes.length;
 			var currContent = 0;
 
 			window.setInterval(function () {
-				currContent = currContent === typeAmount - 1 ? 0 : currContent + 1;
-				setUpOrDown(contentTypes[currContent].direction);
-				(0, _jquery2.default)('.content-type').attr('src', '/images/' + contentTypes[currContent].name + '.svg');
+				if (currContent === typeAmount - 1) {
+					(0, _jquery2.default)('.fullscreen').random().show();
+					currContent = 0;
+				} else {
+					(0, _jquery2.default)('.fullscreen').hide();
+					currContent = currContent + 1;
+					setUpOrDown(contentTypes[currContent].direction);
+					(0, _jquery2.default)('.content-type').attr('src', '/images/' + contentTypes[currContent].name + '.svg');
+				}
 			}, 2000);
 		})();
 	}

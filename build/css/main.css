@@ -607,6 +607,16 @@ img {
         cursor: pointer;
         width: 50%; }
 
+.fullscreen {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #000000;
+  top: 0px;
+  display: none;
+  margin: 0;
+  z-index: 1; }
+
 input,
 label,
 select {
